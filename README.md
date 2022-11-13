@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @biu9，a student studying in ZheJiang university
+- 👋 Hi, I’m thy，a student studying in ZheJiang university
 - 👀 I’m interested in web development
 - 🌱 I’m currently learning React and Typescript
 - 💞️ I’m looking to collaborate on develop a awesome web site
