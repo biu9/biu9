@@ -1,7 +1,7 @@
 ## Hi, I'm thy 👋
 
 ![Typing SVG](https://readme-typing-svg.demolab.com?lines=Frontend+%26+Full+Stack+Developer;EE+Background+from+Zhejiang+University;Exploring+AIGC)
-<p align="center">
+<p>
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=biu9&theme=tokyonight" height="180" />
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=biu9&theme=tokyonight" height="180" />
 </p>
