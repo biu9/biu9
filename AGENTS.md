@@ -1,10 +1,12 @@
-# Agent 编码规范
+# Agent 规范
 
-1. 尽可能少的写防御性代码、fallback代码、try catch
+## 编码规范
 
-2. 代码中尽可能少的用any、as
+- 尽可能少的写防御性代码、fallback代码、try catch
 
-3. 不要用硬编码做逻辑判断，改用enum
+- 代码中尽可能少的用any、as
+
+- 不要用硬编码做逻辑判断，改用enum
 
 ```typescript
 // bad case
@@ -19,9 +21,7 @@ enum ModelAction {
 const result = params?.decision === ModelAction.SAVE ? ModelAction.SAVE : ModelAction.REJECT;
 ```
 
-4. 编码前，搜索代码仓库中是否有可复用的类似实现
-
-5. 规范注释，good case：
+- 规范注释，good case：
 ```typescript
 /** example count */
 const EXAMPLE_COUNT = 10;
@@ -48,3 +48,17 @@ const exampleFunc = (num1: number, num2: number): number => {
   return num1 + num2;
 };
 ```
+
+## 文件结构规范
+
+- 编码前，搜索代码仓库中是否有可复用的类似实现，默认值、常量等，搜索代码库中是否有config文件，写在单独的config文件中，而不是代码文件中
+
+## 测试规范
+
+- TDD驱动，完成功能后，需要编写单元测试、集成测试、e2e测试
+
+- 单元测试描述使用中文
+
+## 技术架构规范
+
+- 对于新项目，优先使用bun + Typescript + Node22
