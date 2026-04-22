@@ -23,7 +23,7 @@ enum ModelAction {
 const result = params?.decision === ModelAction.SAVE ? ModelAction.SAVE : ModelAction.REJECT;
 ```
 
-- 规范注释，good case：
+- 规范注释，且所有注释用中文，good case：
 ```typescript
 /** example count */
 const EXAMPLE_COUNT = 10;
