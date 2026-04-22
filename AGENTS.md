@@ -1,8 +1,8 @@
-# Agent.md
+# AGENTS.md
 
 ## 编码规范
 
-- 尽可能少的写防御性代码、fallback代码、try catch
+- 尽可能少的写防御性代码、fallback代码、try catch。所有报错需要有对应的日志输入，不接受静默失败
 
 - 代码中尽可能少的用any、as
 
