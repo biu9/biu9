@@ -12,6 +12,8 @@
 
 - 不要用硬编码做逻辑判断，改用enum
 
+- 函数、class的注释尽可能简洁，只需说明模块的作用，不需要说明变更的来龙去脉
+
 ```typescript
 // bad case
 const result = params?.decision === '保留' ? '保留' : '丢弃';
