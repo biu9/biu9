@@ -55,6 +55,148 @@ const exampleFunc = (num1: number, num2: number): number => {
 };
 ```
 
+
+### **clean code**
+
+> https://github.com/ryanmcdermott/clean-code-javascript
+> 
+> 
+> 好的编程远不止是掌握语言的机制。最重要的是，需要记住程序员创建程序是为其他人将来阅读的。好的程序反映了问题陈述及其中的重要概念，它带有简洁的自我描述。示例说明了此描述，并将其与需要解决的问题联系起来。这些示例还确保未来的读者知道代码的工作原理和方式。
+> 
+
+这一部分是对于代码格式的一些建议,包括但不仅限于变量命名,函数命名,注释格式等
+
+### **变量**
+
+1. 使用meaningful的变量名
+
+bad: `const yyyymmdstr = moment().format("YYYY/MM/DD");`
+
+good: `const currentDate = moment().format("YYYY/MM/DD");`
+
+1. 不要使用magic number
+
+bad:
+
+```
+// What the heck is 86400000 for?
+setTimeout(blastOff, 86400000);
+```
+
+good:
+
+```
+// Declare them as capitalized named constants.
+const MILLISECONDS_PER_DAY = 60 * 60 * 24 * 1000; //86400000;
+
+setTimeout(blastOff, MILLISECONDS_PER_DAY);
+```
+
+1. 使用易于理解的变量名(在forEach等中)
+
+bad:
+
+```
+[1,2,3,4].forEach(i => {
+    //...
+})
+```
+
+good:
+
+```
+[1,2,3,4].forEach(item => {
+    // replace item with other meaningful name related to origin array
+})
+```
+
+1. 如果你的class/object名表明了一些事情,不要在变量名中重复
+
+bad:
+
+```
+const Car = {
+    carColor:"blue"
+}
+```
+
+good:
+
+```
+const Car = {
+    color:"blue"
+}
+```
+
+1. 在函数中使用default parameters
+
+bad:
+
+```
+function tutorialExample(param) {
+        const tmpParam = param || "default param";
+}
+```
+
+good:
+
+```
+function tutorialExample(param = "default param") {
+        //...
+}
+```
+
+### **函数**
+
+1. 限制函数的参数在两个及以下，当参数数量过多时，将他们写在一个对象里
+2. 一个函数只能做一件事情，在函数中尽可能避免if等条件语句
+3. 函数的名字应该说明这个函数的用处
+4. 尽可能减少重复的代码，提高函数的可复用性
+5. 尽可能避免Side Effects，一个函数应当尽可能**只做到接受一个值并返回一个值**
+
+Bad:
+
+```
+// Global variable referenced by following function.
+// If we had another function that used this name, now it'd be an array and it could break it.
+let name = "Ryan McDermott";
+
+function splitIntoFirstAndLastName() {
+  name = name.split(" ");
+}
+
+splitIntoFirstAndLastName();
+
+console.log(name); // ['Ryan', 'McDermott'];
+```
+
+```
+const addItemToCart = (cart, item) => {
+  cart.push({ item, date: Date.now() });
+};
+```
+
+Good:
+
+```
+function splitIntoFirstAndLastName(name) {
+  return name.split(" ");
+}
+
+const name = "Ryan McDermott";
+const newName = splitIntoFirstAndLastName(name);
+
+console.log(name); // 'Ryan McDermott';
+console.log(newName); // ['Ryan', 'McDermott'];
+```
+
+```
+const addItemToCart = (cart, item) => {
+  return [...cart, { item, date: Date.now() }];
+};
+```
+
+
 ## 设计规范
 
 ### 单一职责原则
